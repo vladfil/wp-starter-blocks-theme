@@ -1,0 +1,14 @@
+{
+  "name": "wp-starter-blocks-theme",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite build --watch",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "sass": "^1.70.0",
+    "vite": "^5.0.12"
+  }
+}
