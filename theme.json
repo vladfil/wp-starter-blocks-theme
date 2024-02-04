@@ -1,9 +1,117 @@
 {
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
   "version": 2,
   "settings": {
     "layout": {
-      "contentSize": "840px",
+      "contentSize": "740px",
       "wideSize": "1100px"
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "fontFamily": "Outfit",
+          "name": "Outfit",
+          "slug": "outfit",
+          "fontFace": [
+            {
+              "fontFamily": "Outfit Light",
+              "fontStyle": "normal",
+              "fontWeight": "300",
+              "src": ["file:./assets/fonts/Outfit/Outfit-Light.ttf"]
+            },
+            {
+              "fontFamily": "Outfit Regular",
+              "fontStyle": "normal",
+              "fontWeight": "400",
+              "src": ["file:./assets/fonts/Outfit/Outfit-Regular.ttf"]
+            },
+            {
+              "fontFamily": "Outfit Bold",
+              "fontStyle": "normal",
+              "fontWeight": "700",
+              "src": ["file:./assets/fonts/Outfit/Outfit-Bold.ttf"]
+            }
+          ]
+        },
+        {
+          "fontFamily": "Karla",
+          "name": "Karla",
+          "slug": "karla",
+          "fontFace": [
+            {
+              "fontFamily": "Karla Light",
+              "fontStyle": "normal",
+              "fontWeight": "300",
+              "src": ["file:./assets/fonts/Karla/Karla-Light.ttf"]
+            },
+            {
+              "fontFamily": "Karla Regular",
+              "fontStyle": "normal",
+              "fontWeight": "400",
+              "src": ["file:./assets/fonts/Karla/Karla-Regular.ttf"]
+            },
+            {
+              "fontFamily": "Karla Bold",
+              "fontStyle": "normal",
+              "fontWeight": "700",
+              "src": ["file:./assets/fonts/Karla/Karla-Bold.ttf"]
+            }
+          ]
+        }
+      ],
+      "fontWeight": true,
+      "fontSizes": [
+        {
+          "slug": "s",
+          "size": "1rem",
+          "name": "S",
+          "fluid": true
+        },
+        {
+          "slug": "m",
+          "size": "1.5rem",
+          "name": "M",
+          "fluid": true
+        },
+        {
+          "slug": "l",
+          "size": "2rem",
+          "name": "L",
+          "fluid": true
+        },
+        {
+          "slug": "xl",
+          "size": "2.5rem",
+          "name": "XL",
+          "fluid": true
+        },
+        {
+          "slug": "xxl",
+          "size": "3.5rem",
+          "name": "XXL",
+          "fluid": true
+        },
+        {
+          "slug": "xxxl",
+          "size": "4.5rem",
+          "name": "XXXL",
+          "fluid": true
+        }
+      ]
+    }
+  },
+  "styles": {
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--karla)",
+      "fontSize": "var(--wp--preset--font-size--xxl)"
+    },
+    "elements": {
+      "heading": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--outfit)",
+          "fontSize": "var(--wp--preset--font-size--xxl)"
+        }
+      }
     }
   }
 }
