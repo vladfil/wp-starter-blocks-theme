@@ -1,3 +1,4 @@
 dist
 node_modules
+blocks/build
 package-lock.json

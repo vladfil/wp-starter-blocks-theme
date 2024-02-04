@@ -5,9 +5,12 @@
   "type": "module",
   "scripts": {
     "start": "vite build --watch",
-    "build": "vite build"
+    "build": "vite build",
+    "block:start": "wp-scripts start --webpack-src-dir=blocks/src/ --output-path=blocks/build/",
+    "block:build": "wp-scripts build --webpack-src-dir=blocks/src/ --output-path=blocks/build/"
   },
   "devDependencies": {
+    "@wordpress/scripts": "^27.1.0",
     "sass": "^1.70.0",
     "vite": "^5.0.12"
   }
