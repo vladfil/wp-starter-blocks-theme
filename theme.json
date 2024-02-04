@@ -6,6 +6,30 @@
       "contentSize": "740px",
       "wideSize": "1100px"
     },
+    "color": {
+      "palette": [
+        {
+          "color": "#E5E5E5",
+          "slug": "beige",
+          "name": "Beige"
+        },
+        {
+          "color": "#928876",
+          "slug": "bronze",
+          "name": "Bronze"
+        },
+        {
+          "color": "#FBF06D",
+          "slug": "gold",
+          "name": "Gold"
+        },
+        {
+          "color": "#DFD5C4",
+          "slug": "grey",
+          "name": "Grey"
+        }
+      ]
+    },
     "typography": {
       "fontFamilies": [
         {
@@ -69,13 +93,13 @@
         },
         {
           "slug": "m",
-          "size": "1.5rem",
+          "size": "1.25rem",
           "name": "M",
           "fluid": true
         },
         {
           "slug": "l",
-          "size": "2rem",
+          "size": "1.5rem",
           "name": "L",
           "fluid": true
         },
@@ -103,13 +127,20 @@
   "styles": {
     "typography": {
       "fontFamily": "var(--wp--preset--font-family--karla)",
-      "fontSize": "var(--wp--preset--font-size--xxl)"
+      "fontSize": "var(--wp--preset--font-size--m)"
+    },
+    "color": {
+      "text": "var(--wp--preset--color--beige)",
+      "background": "var(--wp--preset--color--black)"
     },
     "elements": {
       "heading": {
         "typography": {
           "fontFamily": "var(--wp--preset--font-family--outfit)",
           "fontSize": "var(--wp--preset--font-size--xxl)"
+        },
+        "color": {
+          "text": "var(--wp--preset--color--white)"
         }
       }
     }
