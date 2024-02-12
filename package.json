@@ -6,8 +6,8 @@
   "scripts": {
     "start": "vite build --watch",
     "build": "vite build",
-    "block:start": "wp-scripts start --webpack-src-dir=blocks/src/ --output-path=blocks/build/",
-    "block:build": "wp-scripts build --webpack-src-dir=blocks/src/ --output-path=blocks/build/"
+    "blocks:start": "wp-scripts start --webpack-src-dir=blocks/src/ --output-path=blocks/build/",
+    "blocks:build": "wp-scripts build --webpack-src-dir=blocks/src/ --output-path=blocks/build/"
   },
   "devDependencies": {
     "@wordpress/scripts": "^27.1.0",
