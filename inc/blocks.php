@@ -12,6 +12,8 @@ add_action( 'init', function() {
       $args['render_callback'] = $render_callback;
     }
 
-    register_block_type( __DIR__ . '/blocks/build/' . $dir . '/block.json', $args );
+    if (register_block_type( THEME_PATH . '/blocks/build/' . $dir . '/block.json', $args )) {
+      var_dump(THEME_PATH . '/blocks/build/' . $dir . '/block.json');
+    }
   }
 });
