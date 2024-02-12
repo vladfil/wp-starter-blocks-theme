@@ -1,38 +1,62 @@
-/**
- * Retrieves the translation of text.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
- */
 import { __ } from '@wordpress/i18n';
-
-/**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
- */
-import { useBlockProps } from '@wordpress/block-editor';
-
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * Those files can contain any CSS code that gets applied to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
- */
+import { 
+	// useBlockProps,
+	RichText,
+	MediaUpload,
+	MediaUploadCheck
+} from '@wordpress/block-editor';
+import { Button } from '@wordpress/components';
 import './editor.scss';
 
-/**
- * The edit function describes the structure of your block in the context of the
- * editor. This represents what the editor will render when the block is used.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
- *
- * @return {Element} Element to render.
- */
-export default function Edit() {
+const ALLOWED_MEDIA_TYPES = [ 'image' ];
+
+function MediaUploader({image, setAttributes}) {
+	// const {id, url, size, alt} = image;
+
 	return (
-		<p { ...useBlockProps() }>
-			{ __( 'Example Static – hello from the editor!', 'example-static' ) }
-		</p>
+		<MediaUploadCheck>
+			<MediaUpload
+				onSelect={ ( media ) =>
+					console.log( 'selected ' + media.length )
+				}
+				allowedTypes={ ALLOWED_MEDIA_TYPES }
+				value={ image?.id }
+				render={ ( { open } ) => (
+					<Button onClick={ open }>Open Media Library</Button>
+				) }
+			/>
+		</MediaUploadCheck>
+	);
+}
+
+export default function Edit({attributes, setAttributes}) {
+	const {title, subtitle, description, image} = attributes;
+
+	return (
+		<section class="hero">
+			<div class="hero__column">
+				<MediaUploader image={image} setAttributes={setAttributes} />
+			</div>
+			<div class="hero__column">
+				<RichText
+					tagName="h2"
+					placeholder={ __( 'Example Static – hello from the editor!', 'example-static' ) }
+					value={ title }
+					onChange={ title => setAttributes({ title }) }
+				/>
+				<RichText
+					tagName="h4"
+					placeholder={ __( 'Example Static – hello from the editor!', 'example-static' ) }
+					value={ subtitle }
+					onChange={ subtitle => setAttributes({ subtitle }) }
+				/>
+				<RichText
+					tagName="p"
+					placeholder={ __( 'Example Static – hello from the editor!', 'example-static' ) }
+					value={ description }
+					onChange={ description => setAttributes({ description }) }
+				/>
+			</div>
+		</section>
 	);
 }

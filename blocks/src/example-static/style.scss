@@ -1,12 +1,8 @@
-/**
- * The following styles get applied both on the front of your site
- * and in the editor.
- *
- * Replace them with your own styles or remove the file completely.
- */
+.hero {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
 
-.wp-block-wp-starter-blocks-theme-example-static {
-	background-color: #21759b;
-	color: #fff;
-	padding: 2px;
+	&__column {
+
+	}
 }

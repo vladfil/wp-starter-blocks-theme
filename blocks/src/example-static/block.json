@@ -10,6 +10,53 @@
 	"supports": {
 		"html": false
 	},
+	"attributes": {
+		"image": {
+			"type": "object",
+			"selector": "img",
+      "properties": {
+        "id": {
+          "type": "number",
+					"source": "attribute",
+					"attribute": "src"
+        },
+        "url": {
+          "type": "string",
+					"source": "attribute",
+					"attribute": "src"
+        },
+				"size": {
+					"enum": ["full", "large", "middle", "small"],
+					"default": "large",
+					"source": "attribute",
+					"attribute": "data-size"
+				},
+				"alt": {
+					"type": "string",
+					"source": "attribute",
+					"attribute": "alt"
+				}
+      }
+		},
+		"title": {
+      "type": "string",
+      "default": "Example Static",
+			"source": "text",
+			"selector": "h2"
+    },
+		"subtitle": {
+			"type": "string",
+			"default": "Subtitle for Example Static",
+			"source": "text",
+			"selector": "h4"
+		},
+		"description": {
+			"type": "string",
+			"default": "Description for Example Static",
+			"source": "text",
+			"selector": "p"
+		}
+	},
 	"textdomain": "example-static",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
