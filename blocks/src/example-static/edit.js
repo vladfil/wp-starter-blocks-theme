@@ -1,9 +1,9 @@
 import { __ } from '@wordpress/i18n';
 import { 
-	// useBlockProps,
+	useBlockProps,
 	RichText,
 	MediaUpload,
-	MediaUploadCheck
+	MediaUploadCheck,
 } from '@wordpress/block-editor';
 import { Button } from '@wordpress/components';
 import './editor.scss';
@@ -11,7 +11,7 @@ import './editor.scss';
 const ALLOWED_MEDIA_TYPES = [ 'image' ];
 
 function MediaUploader({image, setAttributes}) {
-	const {id, url, size, alt} = image;
+	const {id, url, alt} = image;
 
 	return (
 		<MediaUploadCheck>
@@ -34,10 +34,11 @@ function MediaUploader({image, setAttributes}) {
 }
 
 export default function Edit({attributes, setAttributes}) {
+	const blockProps = useBlockProps.save();
 	const {title, subtitle, description, image} = attributes;
 
 	return (
-		<section class="hero">
+		<section class={`${blockProps.className} hero`}>
 			<div class="hero__column">
 				<MediaUploader image={image} setAttributes={setAttributes} />
 			</div>
@@ -60,6 +61,7 @@ export default function Edit({attributes, setAttributes}) {
 					value={ description }
 					onChange={ description => setAttributes({ description }) }
 				/>
+				<InnerBlocks />
 			</div>
 		</section>
 	);

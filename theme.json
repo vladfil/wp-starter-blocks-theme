@@ -172,6 +172,11 @@
           "fontSize": "var(--wp--preset--font-size--s)"
         }
       }
+    },
+    "blocks": {
+      "wp-starter-blocks-theme/example-static": {
+        "elements": {}
+      }
     }
   }
 }

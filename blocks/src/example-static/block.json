@@ -13,8 +13,6 @@
 	"attributes": {
 		"image": {
 			"type": "object",
-			"source": "html",
-			"selector": ".hero__image",
       "properties": {
         "id": {
           "type": "number",
@@ -28,13 +26,6 @@
 					"attribute": "src",
 					"selector": ".hero__image"
         },
-				"size": {
-					"enum": ["full", "large", "middle", "small"],
-					"default": "large",
-					"source": "attribute",
-					"attribute": "data-size",
-					"selector": ".hero__image"
-				},
 				"alt": {
 					"type": "string",
 					"source": "attribute",
