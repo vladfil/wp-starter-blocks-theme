@@ -13,30 +13,41 @@
 	"attributes": {
 		"image": {
 			"type": "object",
-			"selector": "img",
+			"source": "html",
+			"selector": ".hero__image",
       "properties": {
         "id": {
           "type": "number",
 					"source": "attribute",
-					"attribute": "src"
+					"attribute": "id",
+					"selector": ".hero__image"
         },
         "url": {
           "type": "string",
 					"source": "attribute",
-					"attribute": "src"
+					"attribute": "src",
+					"selector": ".hero__image"
         },
 				"size": {
 					"enum": ["full", "large", "middle", "small"],
 					"default": "large",
 					"source": "attribute",
-					"attribute": "data-size"
+					"attribute": "data-size",
+					"selector": ".hero__image"
 				},
 				"alt": {
 					"type": "string",
 					"source": "attribute",
-					"attribute": "alt"
+					"attribute": "alt",
+					"selector": ".hero__image"
 				}
-      }
+      },
+			"default": {
+				"id": 0,
+				"url": "",
+        "size": "large",
+        "alt": ""
+			}
 		},
 		"title": {
       "type": "string",

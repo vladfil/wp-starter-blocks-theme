@@ -11,18 +11,22 @@ import './editor.scss';
 const ALLOWED_MEDIA_TYPES = [ 'image' ];
 
 function MediaUploader({image, setAttributes}) {
-	// const {id, url, size, alt} = image;
+	const {id, url, size, alt} = image;
 
 	return (
 		<MediaUploadCheck>
 			<MediaUpload
-				onSelect={ ( media ) =>
-					console.log( 'selected ' + media.length )
-				}
+				onSelect={ ( media ) => setAttributes({image: {id: media.id, url: media.url, alt: media.alt}})}
 				allowedTypes={ ALLOWED_MEDIA_TYPES }
-				value={ image?.id }
+				value={ id }
 				render={ ( { open } ) => (
-					<Button onClick={ open }>Open Media Library</Button>
+					<span onClick={open}>
+						{id ? (
+							<img className='hero__image' src={url} alt={alt} id={id} />
+						) : (
+							<Button >Open Media Library</Button>
+						)}
+					</span>
 				) }
 			/>
 		</MediaUploadCheck>

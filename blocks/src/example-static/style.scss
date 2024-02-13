@@ -3,6 +3,8 @@
 	grid-template-columns: repeat(2, 1fr);
 
 	&__column {
-
+		img {
+			max-width: 100%;
+		}
 	}
 }
