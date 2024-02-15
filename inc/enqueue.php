@@ -21,3 +21,19 @@ add_action('wp_enqueue_scripts', function() {
     }
   }
 });
+
+add_action('admin_enqueue_scripts', function() {
+  $blockEditorVars = [
+    'scripts' => []
+  ];
+
+  $distUrl = get_template_directory_uri() . '/dist/';
+  foreach (scandir(DIST_SCRIPTS) as $file) {
+    if ($file !== '.' and $file !== '..') {
+      $fileParts = explode('__', basename($file, '.js'));
+      $blockEditorVars['scripts'][] = $distUrl . "scripts/$file";
+    }
+  }
+
+  wp_localize_script('wp-block-editor', 'EDITOR_VARS', $blockEditorVars);
+});
