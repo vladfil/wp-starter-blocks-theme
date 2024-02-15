@@ -61,7 +61,6 @@ export default function Edit({attributes, setAttributes}) {
 					value={ description }
 					onChange={ description => setAttributes({ description }) }
 				/>
-				<InnerBlocks />
 			</div>
 		</section>
 	);

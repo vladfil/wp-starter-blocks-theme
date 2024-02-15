@@ -3,7 +3,8 @@ add_action( 'init', function() {
   // Register blocks in the format $dir => $render_callback.
   $blocks = [
     'example-dynamic' => '', 
-    'example-static'  => '', // Static block. Doesn't need a callback.
+    'example-static'  => '',
+    'tabs'  => '',
   ];
 
   foreach ( $blocks as $dir => $render_callback ) {
